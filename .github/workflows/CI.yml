@@ -12,10 +12,12 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Run test
+      - name: Build package
         run: |
           python3 setup.py build
           python3 setup.py install
+      - name: Run test
+        run: |
           pytest --cov=./ --cov-report=xml
 
       - uses: codecov/codecov-action@v2

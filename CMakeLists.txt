@@ -16,3 +16,8 @@ if(SKBUILD)
 endif()
 
 find_package(pybind11 CONFIG REQUIRED)
+
+# target
+pybind11_add_module(example_cpp_lib src/example_lib/example.cpp)
+
+install(TARGETS example_cpp_lib DESTINATION .)

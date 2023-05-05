@@ -1,6 +1,6 @@
 # project
 cmake_minimum_required(VERSION 3.13.0)
-project(matfield VERSION "0.0.1")
+project(hybrid_programming VERSION "0.0.1")
 set(CMAKE_CXX_STANDARD 17)
 
 if(SKBUILD)

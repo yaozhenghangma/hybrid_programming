@@ -10,7 +10,7 @@
 * Register package on [pypi](https://pypi.org)
 * Publish documents on [Read the Docs](https://readthedocs.org)
 
-##Contents
+## Contents
 
 ```{eval-rst}
 .. toctree::

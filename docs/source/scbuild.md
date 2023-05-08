@@ -50,4 +50,4 @@ Once these three things are prepared correctly. In root directory of the project
 python3 setup.py build
 python3 setup.py install
 ```
-The command `build` will build and package the project into a directory named `_skbuild`, and `install` command will copy the packaged project to site-packages director of Python.
+The command `build` will build and package the project into a directory named `_skbuild`, and `install` command will copy the packaged project to site-packages directory of Python.

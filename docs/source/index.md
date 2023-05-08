@@ -14,8 +14,8 @@
 
 ```{eval-rst}
 .. toctree::
-
    vscode
+   scbuild
    github_actions
    api
 ```

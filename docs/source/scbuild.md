@@ -9,13 +9,14 @@ from skbuild import setup
 An example of `setup.py` can be found [here](https://github.com/yaozhenghangma/hybrid_programming/blob/main/setup.py). The additional options in `setup.py` are listed on [Scikit-Build's website](https://scikit-build.readthedocs.io/en/latest/usage.html#setup-options) and [Python's document](https://docs.python.org/3/distutils/setupscript.html).
 
 ## `pyproject.toml`
-`pyproject.toml` is the specified file format of [PEP 518](https://peps.python.org/pep-0518/), which contains the building system requirements of the project. A detailed description of `pyproject.toml` can be found in [pip's document](https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/). Here, we only utilize a simplified yet practical version that is suitable for most scenarios:
+`pyproject.toml` is the specified file format of [PEP 518](https://peps.python.org/pep-0518/), which contains the dependencies of the project. A detailed description of `pyproject.toml` can be found in [pip's document](https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/). Here, we only utilize a simplified yet practical version that is suitable for most scenarios:
 ```toml
 [build-system]
 requires = [
     "setuptools>=42",
     "cmake>=3.13",
     "scikit-build>=0.14.1",
+    "pybind11>=2.9.2",
 ]
 
 build-backend = "setuptools.build_meta"

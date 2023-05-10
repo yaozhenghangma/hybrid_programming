@@ -14,8 +14,8 @@ from setuptools import find_packages
 
 setup(
     name="hybrid_example",
-    version="0.0.2",
-    description="Dynamical mean field theory package for material research.",
+    version="0.1.0",
+    description="Tutorials about hybrid programming using C++ and Python",
     author="Yaozhenghang Ma",
     author_email="Yaozhenghang.Ma@gmail.com",
     license="MIT",

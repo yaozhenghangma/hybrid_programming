@@ -2,7 +2,8 @@
 
 [![Build Status](https://github.com/YaozhenghangMa/hybrid_programming/actions/workflows/CI.yml/badge.svg?branch=)](https://github.com/YaozhenghangMa/hybrid_programming/actions/workflows/CI.yml?query=branch%3A)
 [![Coverage](https://codecov.io/gh/YaozhenghangMa/hybrid_programming/branch/main/graph/badge.svg)](https://codecov.io/gh/YaozhenghangMa/hybrid_programming)
-[![PyPI](https://img.shields.io/pypi/v/hybrid_programming)](https://pypi.org/project/hybrid_programming/)
+[![PyPI](https://img.shields.io/pypi/v/hybrid_example)](https://pypi.org/project/hybrid_example/)
+[![Documentation Status](https://readthedocs.org/projects/hybrid-programming/badge/?version=latest)](https://hybrid-programming.readthedocs.io/en/latest/?badge=latest)
 ![License](https://img.shields.io/github/license/yaozhenghangma/hybrid_programming)
 
 This package aims to offer tutorials on hybrid programming using C++ and Python. The tutorials cover the following topics:

@@ -7,7 +7,7 @@
 * Multiprocessing via [mpi4py](https://github.com/mpi4py/mpi4py)
 * Continuous integration with [Github Actions](https://github.com/features/actions)
 * Testing with [pytest](https://docs.pytest.org/en/7.3.x/)
-* Register package on [pypi](https://pypi.org)
+* Register package on [PyPI](https://pypi.org)
 * Publish documents on [Read the Docs](https://readthedocs.org)
 
 ## Contents
@@ -17,5 +17,6 @@
    vscode
    scbuild
    github_actions
+   pypi
    api
 ```

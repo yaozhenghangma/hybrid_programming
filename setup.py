@@ -22,7 +22,7 @@ setup(
     url="https://github.com/yaozhenghangma/hybrid_programming/",
     project_urls={
         "Bug Tracker": "https://github.com/yaozhenghangma/hybrid_programming/issues/",
-        "Documentation": "https://hybrid_programming.readthedocs.io/",
+        "Documentation": "https://hybrid-programming.readthedocs.io/",
     },
     packages=find_packages(where="src"),
     package_dir={"": "src"},

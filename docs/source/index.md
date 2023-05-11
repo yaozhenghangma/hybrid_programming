@@ -17,6 +17,7 @@
    vscode
    scbuild
    github_actions
+   pytest
    pypi
    api
 ```

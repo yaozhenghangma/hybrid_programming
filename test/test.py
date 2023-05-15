@@ -1,7 +1,6 @@
 import hybrid_example
 
-a = hybrid_example.c_vector()
-a.vector = [1.0, 2.0, 3.0]
-
-def test_return():
-    assert a.function() == 1.0
+def test():
+    two_args = hybrid_example.c_vector(1.0, 2.0)
+    assert len(two_args.vector) == 2
+    assert two_args.function() == 1.0

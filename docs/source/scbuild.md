@@ -25,16 +25,13 @@ build-backend = "setuptools.build_meta"
 ## `CMakeLists.txt`
 `CMakeLists.txt` file contains building options of CMake. To correctly build a pybind11 project, the location of pybind11 must be provided to CMake:
 ```txt
-if(SKBUILD)
-  execute_process(
-    COMMAND "${PYTHON_EXECUTABLE}" -c
+# add package: pybind11
+execute_process(
+    COMMAND "${Python3_EXECUTABLE}" -c
             "import pybind11; print(pybind11.get_cmake_dir())"
-    OUTPUT_VARIABLE _tmp_dir
+    OUTPUT_VARIABLE pybind11_dir
     OUTPUT_STRIP_TRAILING_WHITESPACE COMMAND_ECHO STDOUT)
-  list(APPEND CMAKE_PREFIX_PATH "${_tmp_dir}")
-endif()
-
-find_package(pybind11 CONFIG REQUIRED)
+find_package(pybind11 CONFIG REQUIRED PATHS ${pybind11_dir})
 ```
 To compile a C++ source code into a shared library, we can use the following commands:
 ```txt

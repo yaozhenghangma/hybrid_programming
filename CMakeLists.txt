@@ -3,19 +3,12 @@ cmake_minimum_required(VERSION 3.13.0)
 project(hybrid_programming)
 set(CMAKE_CXX_STANDARD 17)
 
-if(NOT SKBUILD)
-    find_package (Python3 COMPONENTS Interpreter Development)
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# C++/Python extensions part
+add_subdirectory(src/hybrid_example)
+
+# code testing part
+if(BUILD_TEST)
+    add_subdirectory(test)
 endif()
-
-# add package: pybind11
-execute_process(
-    COMMAND "${Python3_EXECUTABLE}" -c
-            "import pybind11; print(pybind11.get_cmake_dir())"
-    OUTPUT_VARIABLE pybind11_dir
-    OUTPUT_STRIP_TRAILING_WHITESPACE COMMAND_ECHO STDOUT)
-find_package(pybind11 CONFIG REQUIRED PATHS ${pybind11_dir})
-
-# target
-pybind11_add_module(example_cpp_lib src/example_lib/example.cpp)
-
-install(TARGETS example_cpp_lib DESTINATION .)

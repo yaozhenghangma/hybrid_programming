@@ -12,14 +12,21 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Build package
+      - name: Build Python package
         run: |
           python3 setup.py build
           python3 setup.py install
-      - name: Run test
+      - name: Run test for Python part
         run: |
           pytest --cov=./ --cov-report=xml test/*.py
+      - name: Build C++ package
+        run: |
+          cmake -DBUILD_TEST=ON .
+          make
+      - name: Run test for C++ part
+        run: |
+          ./test/test -r xml | cat > ./coverage_cpp.xml
 
       - uses: codecov/codecov-action@v3
         with:
-          files: ./coverage.xml
+          files: ./coverage.xml, ./coverage_cpp.xml

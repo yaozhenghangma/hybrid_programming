@@ -1,3 +1,6 @@
 [submodule "test/lib/Catch2"]
 	path = test/lib/Catch2
 	url = https://github.com/catchorg/Catch2.git
+[submodule "cmake"]
+	path = cmake
+	url = https://github.com/bilke/cmake-modules.git

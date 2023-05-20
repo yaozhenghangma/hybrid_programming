@@ -14,7 +14,7 @@ from setuptools import find_packages
 
 setup(
     name="hybrid_example",
-    version="0.2.3",
+    version="0.2.2",
     description="Tutorials about hybrid programming using C++ and Python",
     author="Yaozhenghang Ma",
     author_email="Yaozhenghang.Ma@gmail.com",

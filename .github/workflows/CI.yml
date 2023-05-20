@@ -21,16 +21,13 @@ jobs:
       - name: Run test for Python part
         run: |
           pytest --cov=./ --cov-report=xml test/*.py
-      - name: Build C++ package
+      - name: Build C++ package and run test
         run: |
           mkdir build && cd build
           cmake -DBUILD_TEST=ON -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug ..
           make
           make coverage
-      - name: Run test for C++ part
-        run: |
           cd ..
-          
 
       - uses: codecov/codecov-action@v3
         with:

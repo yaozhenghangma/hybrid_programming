@@ -52,11 +52,11 @@ jobs:
         run: pytest test/*.py
       - name: Build C++ package
         run: |
-          cmake -DBUILD_TEST=ON .
+          cmake -DBUILD_TEST=ON -DCMAKE_BUILD_TYPE=Debug .
           make
       - name: Run test for C++ part
         run: |
-          ./test/test
+          ./bin/test
 
   upload:
     name: Upload to PyPI

@@ -23,12 +23,14 @@ jobs:
           pytest --cov=./ --cov-report=xml test/*.py
       - name: Build C++ package
         run: |
-          cmake -DBUILD_TEST=ON .
+          mkdir build && cd build
+          cmake -DBUILD_TEST=ON -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug .
           make
       - name: Run test for C++ part
         run: |
-          ./test/test -r xml | cat > ./coverage_cpp.xml
+          make coverage
+          cd ..
 
       - uses: codecov/codecov-action@v3
         with:
-          files: ./coverage_cpp.xml
+          files: ./coverage.xml,./build/coverage.xml

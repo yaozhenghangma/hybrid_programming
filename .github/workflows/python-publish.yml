@@ -25,7 +25,7 @@ jobs:
         with:
           path: dist/*.tar.gz
 
-  test:
+  python_test:
     name: Test SDist
     needs: [build]
     runs-on: ubuntu-latest
@@ -50,6 +50,24 @@ jobs:
           rm -rf dist
       - name: Test installed SDist
         run: pytest test/*.py
+
+  cpp_test:
+    name: Test SDist
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
       - name: Build C++ package
         run: |
           cmake -DBUILD_TEST=ON -DCMAKE_BUILD_TYPE=Debug .
@@ -60,7 +78,7 @@ jobs:
 
   upload:
     name: Upload to PyPI
-    needs: [build, test]
+    needs: [build, python_test, cpp_test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v3

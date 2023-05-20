@@ -52,7 +52,7 @@ jobs:
         run: pytest test/*.py
 
   cpp_test:
-    name: Test SDist
+    name: Test Cpp code
     needs: [ build ]
     runs-on: ubuntu-latest
     strategy:

@@ -26,10 +26,11 @@ jobs:
           mkdir build && cd build
           cmake -DBUILD_TEST=ON -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug ..
           make
+          make coverage
       - name: Run test for C++ part
         run: |
-          make coverage
           cd ..
+          
 
       - uses: codecov/codecov-action@v3
         with:

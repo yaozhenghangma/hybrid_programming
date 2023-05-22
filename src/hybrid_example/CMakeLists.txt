@@ -12,5 +12,7 @@ find_package(pybind11 CONFIG REQUIRED PATHS ${pybind11_dir})
 
 # target
 pybind11_add_module(example_cpp_lib example_export.cpp)
+pybind11_add_module(Ising_lib Ising_export.cpp)
 
 install(TARGETS example_cpp_lib DESTINATION .)
+install(TARGETS Ising_lib DESTINATION .)

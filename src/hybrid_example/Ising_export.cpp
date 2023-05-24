@@ -6,7 +6,7 @@
 namespace py = pybind11;
 
 PYBIND11_MODULE(Ising_lib, m) {
-    py::class_<MonteCarlo>(m, "MonteCarlo")
+    py::class_<MonteCarlo>(m, "MonteCarloCpp")
         .def_readwrite("num_flip", &MonteCarlo::num_flip)
         .def_readwrite("num_relax", &MonteCarlo::num_relax)
         .def_readwrite("num_count", &MonteCarlo::num_count)
